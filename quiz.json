@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "5ee03d0af92ad7425cb1cba5"
+  },
+  "question": "do you want to be spiderman ?",
+  "anser_A": "yes",
+  "anser_B": "no",
+  "anser_C": "may be",
+  "anser_D": "Tien",
+  "correct": "anser_A"
+}]

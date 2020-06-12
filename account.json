@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5ed8514b18861f209cc64cb1"
+  },
+  "userName": "a",
+  "pass": "123",
+  "rule": 1
+},{
+  "_id": {
+    "$oid": "5ed9ef96ab6ee0a9741623be"
+  },
+  "userName": "b",
+  "pass": "123",
+  "rule": 0
+},{
+  "_id": {
+    "$oid": "5ed9fc89a0e8809b9c4846bb"
+  },
+  "userName": "c",
+  "pass": "123",
+  "rule": 0
+}]

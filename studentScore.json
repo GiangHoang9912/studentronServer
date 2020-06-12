@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "5eda0c563e5b513dd0706dee"
+  },
+  "studentId": "5ed9ef96ab6ee0a9741623be",
+  "score": "100",
+  "subjectId": "MAE101"
+},{
+  "_id": {
+    "$oid": "5eda16303e5b513dd0706def"
+  },
+  "studentId": "5ed9ef96ab6ee0a9741623be",
+  "score": "100",
+  "subjectId": "OSG101"
+},{
+  "_id": {
+    "$oid": "5eda16ff3e5b513dd0706df0"
+  },
+  "studentId": "5ed9fc89a0e8809b9c4846bb",
+  "score": "90",
+  "subjectId": "MAE101"
+},{
+  "_id": {
+    "$oid": "5eda170e3e5b513dd0706df1"
+  },
+  "studentId": "5ed9fc89a0e8809b9c4846bb",
+  "score": "90",
+  "subjectId": "OSG101"
+}]
