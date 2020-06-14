@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "5ee5f1f55306833d64e5477d"
+  },
+  "question": "1 + 1 = ?",
+  "answer": [
+    "1",
+    "2",
+    "3"
+  ],
+  "status": true,
+  "userId": "5ed8514b18861f209cc64cb1",
+  "correct": [
+    0
+  ]
+}]

@@ -19,8 +19,4 @@
   "userName": "c",
   "pass": "123",
   "rule": 0
-},{
-  "_id": {
-    "$oid": "5ee03d0af92ad7425cb1cba5"
-  }
 }]

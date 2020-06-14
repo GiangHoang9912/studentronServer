@@ -1,18 +1,84 @@
 [{
   "_id": {
-    "$oid": "5ee4b0cb5fa084286c60ec3b"
+    "$oid": "5ee5f369a076381124d20c5c"
   },
-  "question": "do you want to be supperman ?",
+  "question": "a + b = 12",
   "answer": [
-    "yes",
-    "no",
-    "maybe",
-    "ok"
+    "a = 1, b = 2",
+    "a = 2, b = 2"
   ],
-  "correct": [
-    "1"
-  ],
+  "status": true,
   "userId": "5ed8514b18861f209cc64cb1",
-  "subject": "MAE101",
-  "status": true
+  "correct": [
+    0
+  ]
+},{
+  "_id": {
+    "$oid": "5ee5fd69e10f920068f56bbe"
+  },
+  "question": "1 + 2 = ?",
+  "answer": [
+    "1",
+    "2",
+    "3"
+  ],
+  "status": true,
+  "userId": "5ed8514b18861f209cc64cb1",
+  "correct": [
+    2
+  ]
+},{
+  "_id": {
+    "$oid": "5ee66114e10f920068f56bc0"
+  },
+  "question": "a",
+  "answer": [
+    "b"
+  ],
+  "status": true,
+  "userId": "5ed8514b18861f209cc64cb1",
+  "correct": [
+    0
+  ]
+},{
+  "_id": {
+    "$oid": "5ee66117e10f920068f56bc1"
+  },
+  "question": "a",
+  "answer": [
+    "b"
+  ],
+  "status": true,
+  "userId": "5ed8514b18861f209cc64cb1",
+  "correct": [
+    0
+  ]
+},{
+  "_id": {
+    "$oid": "5ee664a7e441cd20501d6be9"
+  },
+  "question": "a",
+  "answer": [
+    "1",
+    "2"
+  ],
+  "status": true,
+  "userId": "5ed8514b18861f209cc64cb1",
+  "correct": [
+    0
+  ]
+},{
+  "_id": {
+    "$oid": "5ee68dd0fde4504678bec74f"
+  },
+  "question": "a",
+  "answer": [
+    "1",
+    "2"
+  ],
+  "status": true,
+  "userId": "5ed8514b18861f209cc64cb1",
+  "correct": [
+    0
+  ]
 }]
