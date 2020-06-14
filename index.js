@@ -1,7 +1,18 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const cors = require('cors');
-const { createUser, getUser, getAllStudent, createCollection, getScoreByIdStudent } = require('./database/dbContext')
+const {
+  createUser,
+  getStudent,
+  getAllStudent,
+  createCollection,
+  getScoreByIdStudent
+} = require('./database/studentDao')
+
+const { getAllQuizzes, createQuiz, updateQuiz, disableQuiz } = require('./database/quizzesDao')
+
+const { getAllSubjects, createSubject } = require('./database/subjectDao')
+
 const app = express();
 const PORT = 3000;
 //! create Collection
@@ -15,7 +26,7 @@ app.use(cors());
 
 app.post('/login', (req, res) => {
   const { userName, pass } = req.body;
-  getUser(userName, pass, res);
+  getStudent(userName, pass, res);
 })
 
 app.get('/allStudent', (req, res) => {
@@ -26,6 +37,33 @@ app.get('/scoreOfStudent/:id?', (req, res) => {
   const id = req.params.id;
   getScoreByIdStudent(id, res);
 })
+
+app.get('/getSubjects', (req, res) => {
+  getAllSubjects(res)
+})
+
+app.post('/getAllQuizzes', (req, res) => {
+  const { userId, subjectCode } = req.body;
+  getAllQuizzes(userId, subjectCode, res);
+})
+
+app.post('/postQuiz', (req, res) => {
+  createQuiz(req.body, res)
+})
+
+app.post('/updateQuiz', (req, res) => {
+  updateQuiz(req.body, res);
+})
+
+app.post('/disableQuiz', (req, res) => {
+  disableQuiz(req.body, res);
+})
+
+
+
+// app.post('/postSubject', (req, res) => {
+//   const { subjectCode, subjectName } = req.body
+// })
 
 // app.delete('/student/:id', (req, res) => {
 //   const id = req.params.id;

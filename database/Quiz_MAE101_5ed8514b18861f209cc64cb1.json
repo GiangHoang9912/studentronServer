@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "5ee4b0cb5fa084286c60ec3b"
+  },
+  "question": "do you want to be supperman ?",
+  "answer": [
+    "yes",
+    "no",
+    "maybe",
+    "ok"
+  ],
+  "correct": [
+    "1"
+  ],
+  "userId": "5ed8514b18861f209cc64cb1",
+  "subject": "MAE101",
+  "status": true
+}]

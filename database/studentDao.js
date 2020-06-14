@@ -15,7 +15,7 @@ function createUser(userName, pass, rule) {
   });
 }
 
-function getUser(userName, pass, res) {
+function getStudent(userName, pass, res) {
   MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
     if (err) throw err;
     const dbo = db.db("StudentManagement");
@@ -66,4 +66,4 @@ function getScoreByIdStudent(studentId, res) {
   });
 }
 
-module.exports = { getUser, createUser, getAllStudent, createCollection, getScoreByIdStudent }
+module.exports = { getStudent, createUser, getAllStudent, createCollection, getScoreByIdStudent }
