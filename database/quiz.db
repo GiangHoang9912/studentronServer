@@ -1,0 +1,5 @@
+{"question":"1 + 1 = ?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"CSD101","_id":"F7zmgT2wZhx5DkVg"}
+{"question":"Bạn là siêu nhân à ?","answer":["true","false"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0,1],"subjectCode":"MAE101","_id":"S285MefCDS6qwZdt"}
+{"question":"haha ?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"CSD101","_id":"bEUkWAn1Le6TjICS"}
+{"question":"haha...?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"MAE101","_id":"s1HPG5UHGdBQmIOR"}
+{"question":"Tiến đúng không","answer":["true","false"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"MAE101","_id":"t2ce4WixgSHvEP6L"}

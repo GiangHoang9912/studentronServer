@@ -1,31 +1,26 @@
-const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost:27017/";
-const Subject = require('../entity/subject')
+const Datastore = require('nedb');
+const db = new Datastore({ filename: `${__dirname}/subject.db` });
+db.loadDatabase();
+const Subject = require('../entity/subject');
 
 function getAllSubjects(res) {
-  MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
+  db.find({}, function (err, result) {
     if (err) throw err;
-    const dbo = db.db("StudentManagement");
-    dbo.collection("Subject").find().toArray(function (err, result) {
-      if (err) throw err;
-      db.close();
-      res.json(result);
-      res.end();
-    });
+    res.json(result);
+    res.end();
   });
 }
 
 
-function createSubject(subjectCode, subjectName) {
-  MongoClient.connect(url, function (err, db) {
-    if (err) throw err;
-    const dbo = db.db("StudentManagement");
-    const subject = new Subject(subjectCode, subjectName);
-    dbo.collection("Subject").insertOne(subject, function (err, res) {
-      if (err) throw err;
-      console.log("1 document inserted");
-      db.close();
-    });
+function createSubject(subjectCode, subjectName, response) {
+  const subject = new Subject(subjectCode, subjectName);
+  db.insert(subject, function (err, res) {
+    if (err) {
+      response.json({ status: 400 });
+      throw err;
+    }
+    response.json({ status: 200 })
+    response.end();
   });
 }
 

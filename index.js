@@ -4,21 +4,26 @@ const cors = require('cors');
 const {
   createUser,
   getStudent,
-  getAllStudent,
-  createCollection,
-  getScoreByIdStudent
+  getAllStudent
 } = require('./database/studentDao')
 
 const { getAllQuizzes, createQuiz, updateQuiz, disableQuiz } = require('./database/quizzesDao')
 
 const { getAllSubjects, createSubject } = require('./database/subjectDao')
 
+const { getScoreByIdStudent, createScore } = require('./database/scoreDao')
+
 const app = express();
 const PORT = 3000;
-//! create Collection
-//createCollection('studentScore');
+
 //! create User
-//addUser('c', '123', 0);
+//createUser('c', '123', 0);
+//! create Score
+//createScore();
+//!create SubjectMAE101
+// createSubject('CSD101', 'Data Structures and Algorithms')
+// createSubject('MAE101', 'Mathematics for Engineering')
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -51,15 +56,18 @@ app.post('/postQuiz', (req, res) => {
   createQuiz(req.body, res)
 })
 
-app.post('/updateQuiz', (req, res) => {
+app.put('/updateQuiz', (req, res) => {
   updateQuiz(req.body, res);
 })
 
-app.post('/disableQuiz', (req, res) => {
+app.put('/disableQuiz', (req, res) => {
   disableQuiz(req.body, res);
 })
 
-
+app.post('/addSubject', (req, res) => {
+  const { subjectCode, subjectName } = req.body
+  createSubject(subjectCode, subjectName, res);
+})
 
 // app.post('/postSubject', (req, res) => {
 //   const { subjectCode, subjectName } = req.body
