@@ -1,3 +1,7 @@
-{"question":"1+1=?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"MAE101","_id":"T1afe3HYs7OIXRPM"}
-{"question":"1+1=?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"MAE101","_id":"T1afe3HYs7OIXRPM"}
-{"question":"1+1=?","answer":["1","2"],"status":false,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"MAE101","_id":"T1afe3HYs7OIXRPM"}
+{"question":"Dam so 1 la gi ???","answer":["deo biet ??","Biet"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"VOV1","_id":"UWyATPWC7TdaiizC"}
+{"question":"11","answer":["1","1"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[],"subjectCode":"VOV1","_id":"nyPmL8yobEUeo3xW"}
+{"question":"1 + 1 = ?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"MAE101","_id":"e4uEKXRTyM1NUY67"}
+{"$$deleted":true,"_id":"e4uEKXRTyM1NUY67"}
+{"$$deleted":true,"_id":"UWyATPWC7TdaiizC"}
+{"$$deleted":true,"_id":"nyPmL8yobEUeo3xW"}
+{"question":"1 + 1 = ?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"MAE101","_id":"Z3pXZso0mj5RgKPz"}
