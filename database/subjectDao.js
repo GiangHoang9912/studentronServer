@@ -4,24 +4,24 @@ db.loadDatabase();
 const Subject = require('../entity/subject');
 
 function getAllSubjects(res) {
-  db.find({}, function (err, result) {
-    if (err) throw err;
-    res.json(result);
-    res.end();
-  });
+    db.find({}, function(err, result) {
+        if (err) throw err;
+        res.json(result);
+        res.end();
+    });
 }
 
 
 function createSubject(subjectCode, subjectName, response) {
-  const subject = new Subject(subjectCode, subjectName);
-  db.insert(subject, function (err, res) {
-    if (err) {
-      response.json({ status: 400 });
-      throw err;
-    }
-    response.json({ status: 200 })
-    response.end();
-  });
+    const subject = new Subject(subjectCode, subjectName);
+    db.insert(subject, function(err, res) {
+        if (err) {
+            response.json({ status: 400 });
+            throw err;
+        }
+        response.json({ status: 200 })
+        response.end();
+    });
 }
 
 

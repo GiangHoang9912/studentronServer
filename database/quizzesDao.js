@@ -4,57 +4,71 @@ db.loadDatabase();
 const Quiz = require('../entity/quiz');
 
 function getAllQuizzes(id, subjectCode, res) {
-  db.find({ subjectCode: subjectCode, userId: id }, function (err, result) {
-    if (err) throw err;
-    res.json(result);
-    res.end();
-  });
+    db.find({ subjectCode: subjectCode, userId: id }, function(err, result) {
+        if (err) throw err;
+        res.json(result);
+        res.end();
+    });
 }
 
 function createQuiz(quizzes, response) {
-  const quiz = new Quiz(quizzes.subject, quizzes.quiz.question, quizzes.quiz.answer, quizzes.quiz.status, quizzes.quiz.userId, quizzes.quiz.correct)
-  db.insert(quiz, function (err, res) {
-    if (err) {
-      response.json({ status: 400 });
-      throw err;
-    }
-    response.json({ status: 200 })
-    response.end();
-  });
+    const quiz = new Quiz(quizzes.subject, quizzes.quiz.question, quizzes.quiz.answer, quizzes.quiz.status, quizzes.quiz.userId, quizzes.quiz.correct)
+    db.insert(quiz, function(err, res) {
+        if (err) {
+            response.json({ status: 400 });
+            throw err;
+        }
+        response.json({ status: 200 })
+        response.end();
+    });
 }
 
 function updateQuiz(payload, response) {
-  const myQuery = { _id: payload.quizId };
-  const newValues = { $set: payload.quiz };
-  const option = {}
-  db.update(myQuery, newValues, option, function (err, res) {
-    if (err) {
-      response.json({ status: 400 });
-      throw err;
-    }
-    response.json({ status: 200 })
-    response.end();
-  });
+    const myQuery = { _id: payload.quizId };
+    const newValues = { $set: payload.quiz };
+    const option = {}
+    db.update(myQuery, newValues, option, function(err, res) {
+        if (err) {
+            response.json({ status: 400 });
+            throw err;
+        }
+        response.json({ status: 200 })
+        response.end();
+    });
 }
 
 function disableQuiz(payload, response) {
-  const myQuery = { _id: payload.quiz._id };
-  const newValues = { $set: { status: !payload.quiz.status } };
-  const option = {};
-  db.update(myQuery, newValues, option, function (err, res) {
-    if (err) {
-      response.json({ status: 400 });
-      throw err;
-    }
-    response.json({ status: 200 })
-    response.end();
-  });
+    const myQuery = { _id: payload.quiz._id };
+    const newValues = { $set: { status: !payload.quiz.status } };
+    const option = {};
+    db.update(myQuery, newValues, option, function(err, res) {
+        if (err) {
+            response.json({ status: 400 });
+            throw err;
+        }
+        response.json({ status: 200 })
+        response.end();
+    });
+}
+
+function getExam(id, subjectCode, res) {
+    let exam = [];
+    db.find({ subjectCode: subjectCode, userId: id, status: true }, function(err, result) {
+        if (err) throw err;
+
+        for (const quiz of result) {
+            exam.push({ question: quiz.question, answer: quiz.answer, _id: quiz._id })
+        }
+        res.json(exam);
+        res.end();
+    });
 }
 
 
 module.exports = {
-  getAllQuizzes,
-  createQuiz,
-  updateQuiz,
-  disableQuiz
+    getAllQuizzes,
+    createQuiz,
+    updateQuiz,
+    disableQuiz,
+    getExam
 }
