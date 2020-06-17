@@ -1,7 +1,9 @@
-{"question":"Dam so 1 la gi ???","answer":["deo biet ??","Biet"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"VOV1","_id":"UWyATPWC7TdaiizC"}
-{"question":"11","answer":["1","1"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[],"subjectCode":"VOV1","_id":"nyPmL8yobEUeo3xW"}
-{"question":"1 + 1 = ?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"MAE101","_id":"e4uEKXRTyM1NUY67"}
-{"$$deleted":true,"_id":"e4uEKXRTyM1NUY67"}
-{"$$deleted":true,"_id":"UWyATPWC7TdaiizC"}
-{"$$deleted":true,"_id":"nyPmL8yobEUeo3xW"}
-{"question":"1 + 1 = ?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"MAE101","_id":"Z3pXZso0mj5RgKPz"}
+{"question":"a","answer":[""],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"0","_id":"9gzgXhqRNhKPcnNk"}
+{"question":"1 + 1 =?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[1],"subjectCode":"MAE101","_id":"Ugk9NUWrOQrQOLlo"}
+{"question":"a","answer":["1"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"MAE101","_id":"fx0RuvMT6yliq6wv"}
+{"question":"a","answer":[""],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"0","_id":"pWarU8xQgRnoSKDb"}
+{"question":"1 + 1 =?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0,1],"subjectCode":"MAE101","_id":"Ugk9NUWrOQrQOLlo"}
+{"question":"a","answer":["1","2","3","4"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0],"subjectCode":"MAE101","_id":"fx0RuvMT6yliq6wv"}
+{"question":"1 + 1 =?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0,1],"subjectCode":"MAE101","_id":"Ugk9NUWrOQrQOLlo"}
+{"question":"1 + 1 =?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0,1],"subjectCode":"MAE101","_id":"Ugk9NUWrOQrQOLlo"}
+{"question":"1 + 1 =?","answer":["1","2"],"status":true,"userId":"WMSj9hlTkhKGJTjM","correct":[0,1],"subjectCode":"MAE101","_id":"Ugk9NUWrOQrQOLlo"}

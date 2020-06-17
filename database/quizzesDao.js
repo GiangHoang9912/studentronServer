@@ -57,7 +57,7 @@ function getExam(id, subjectCode, res) {
     if (err) throw err;
 
     for (const quiz of result) {
-      exam.push({ question: quiz.question, answer: quiz.answer, _id: quiz._id })
+      exam.push({ question: quiz.question, answer: quiz.answer, _id: quiz._id, correctLength: quiz.correct.length })
     }
     res.json(exam);
     res.end();
