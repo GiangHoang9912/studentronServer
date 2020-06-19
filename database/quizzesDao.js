@@ -73,6 +73,44 @@ const deleteQuizBySubjectCode = (subjectCode) => {
   });
 }
 
+const caculatorScore = async (exam, userId, subjectCode) => {
+  try {
+    let sum = 0;
+
+    for (const question of exam) {
+      const score = await getScore(question, userId, subjectCode)
+      sum += score
+    }
+    return sum;
+  } catch (error) { }
+}
+
+function getScore(question, userId, subjectCode) {
+  return new Promise((resolve, reject) => {
+    db.find({ subjectCode: subjectCode, userId: userId, _id: question.questionId }, function (err, result) {
+      if (err) throw err;
+      let score = 0;
+      const correctPerMark = 1 / result[0].correct.length;
+      if (question.textAnswers) {
+        for (let j = 0; j < question.textAnswers.length; j++) {
+          for (let i = 0; i < result[0].correct.length; i++) {
+            if (result[0].correct.length === 1) {
+              if (question.textAnswers[j] == result[0].answer[result[0].correct[i]]) {
+                score += correctPerMark;
+              }
+            } else {
+              if (question.textAnswers[j] == result[0].answer[result[0].correct[i]]) {
+                score += correctPerMark;
+              }
+            }
+          }
+        }
+      }
+      resolve(score);
+    });
+  })
+}
+
 
 module.exports = {
   getAllQuizzes,
@@ -80,5 +118,6 @@ module.exports = {
   updateQuiz,
   disableQuiz,
   getExam,
-  deleteQuizBySubjectCode
+  deleteQuizBySubjectCode,
+  caculatorScore
 }

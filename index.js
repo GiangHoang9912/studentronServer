@@ -7,11 +7,25 @@ const {
   getAllStudent
 } = require('./database/studentDao')
 
-const { getAllQuizzes, createQuiz, updateQuiz, disableQuiz, getExam } = require('./database/quizzesDao')
+const {
+  getAllQuizzes,
+  createQuiz,
+  updateQuiz,
+  disableQuiz,
+  getExam,
+  caculatorScore
+} = require('./database/quizzesDao')
 
-const { getAllSubjects, createSubject, deleteSubjectById } = require('./database/subjectDao')
+const {
+  getAllSubjects,
+  createSubject,
+  deleteSubjectById
+} = require('./database/subjectDao')
 
-const { getScoreByIdStudent, createScore } = require('./database/scoreDao')
+const {
+  getScoreByIdStudent,
+  createScore
+} = require('./database/scoreDao')
 
 const app = express();
 const PORT = 3000;
@@ -79,42 +93,20 @@ app.get('/getTestExam/:code?', (req, res) => {
 })
 
 app.delete('/delete/:code?', (req, res) => {
-  const id = req.params.code;
-  deleteSubjectById(res, id);
+  const code = req.params.code;
+  deleteSubjectById(res, code);
 })
 
-// app.post('/postSubject', (req, res) => {
-//   const { subjectCode, subjectName } = req.body
-// })
+app.post('/postExam/:code?', async (req, res) => {
+  const code = req.params.code;
+  const { date, exam, userId } = req.body
+  const splitCode = code.split('_');
+  const subjectCode = splitCode[0];
+  const userMakeQuiz = splitCode[1];
+  const score = await caculatorScore(exam, userMakeQuiz, subjectCode);
 
-// app.delete('/student/:id', (req, res) => {
-//   const id = req.params.id;
-//   dbContext.deleteStudentById(res, id);
-// })
-
-
-// app.put('/student/:id', (req, res) => {
-//   const id = req.params.id;
-//   const studentJson = req.body;
-//   const student = new Student(studentJson.name, studentJson.subject, studentJson.average);
-//   dbContext.updateStudentById(res, id, student);
-// })
-
-
-
-// app.get('/student', (req, res) => {
-//   dbContext.getAllStudents(res);
-// })
-
-// app.post('/student', (req, res) => {
-//   try {
-//     const studentJson = req.body;
-//     const student = new Student(studentJson.name, studentJson.subject, studentJson.average);
-//     dbContext.insertStudent(res, student)
-//   } catch (error) {
-//     console.log(error)
-//   }
-// })
+  createScore(subjectCode, score, userId, date, res)
+})
 
 app.listen(process.env.PORT || PORT, () => {
   console.log("server is running...!")
