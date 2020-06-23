@@ -5,7 +5,7 @@ const {
   createUser,
   getStudent,
   getAllStudent
-} = require('./database/studentDao')
+} = require('./database/student-dao')
 
 const {
   getAllQuizzes,
@@ -13,19 +13,19 @@ const {
   updateQuiz,
   disableQuiz,
   getExam,
-  caculatorScore
-} = require('./database/quizzesDao')
+  calculatorScore
+} = require('./database/quizzes-dao')
 
 const {
   getAllSubjects,
   createSubject,
   deleteSubjectById
-} = require('./database/subjectDao')
+} = require('./database/subject-dao')
 
 const {
   getScoreByIdStudent,
   createScore
-} = require('./database/scoreDao')
+} = require('./database/score-dao')
 
 const app = express();
 const PORT = 3000;
@@ -103,9 +103,9 @@ app.post('/postExam/:code?', async (req, res) => {
   const splitCode = code.split('_');
   const subjectCode = splitCode[0];
   const userMakeQuiz = splitCode[1];
-  const score = await caculatorScore(exam, userMakeQuiz, subjectCode);
+  const score = await calculatorScore(exam, userMakeQuiz, subjectCode);
 
-  createScore(subjectCode, score, userId, date, res)
+  createScore(subjectCode, score, userId, date, res);
 })
 
 app.listen(process.env.PORT || PORT, () => {

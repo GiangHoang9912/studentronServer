@@ -2,7 +2,7 @@ const Datastore = require('nedb');
 const db = new Datastore({ filename: `${__dirname}/subject.db` });
 db.loadDatabase();
 const Subject = require('../entity/subject');
-const { deleteQuizBySubjectCode } = require('./quizzesDao')
+const { deleteQuizBySubjectCode } = require('./quizzes-dao')
 
 function getAllSubjects(res) {
   db.find({}, function (err, result) {

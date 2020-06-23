@@ -73,7 +73,7 @@ const deleteQuizBySubjectCode = (subjectCode) => {
   });
 }
 
-const caculatorScore = async (exam, userId, subjectCode) => {
+const calculatorScore = async (exam, userId, subjectCode) => {
   try {
     let sum = 0;
 
@@ -119,5 +119,5 @@ module.exports = {
   disableQuiz,
   getExam,
   deleteQuizBySubjectCode,
-  caculatorScore
+  calculatorScore
 }

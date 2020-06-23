@@ -6,7 +6,7 @@ db.loadDatabase();
 
 
 function getScoreByIdStudent(studentId, res) {
-  db.find({ studentId: studentId , }, function (err, result) {
+  db.find({ studentId: studentId, }, function (err, result) {
     res.json(result);
     res.end();
   });
@@ -19,7 +19,7 @@ function createScore(subjectCode, score, userId, date, response) {
       response.json({ status: 400 });
       throw err;
     }
-    response.json({ status: 200 })
+    response.json({ status: 200, score: score })
     response.end();
   });
 }
